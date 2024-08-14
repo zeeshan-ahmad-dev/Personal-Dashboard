@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ROOT VARAIBLES */
+:root {
+  --color-white: #fff;
+  --dark-blue: #0038FF;
+  --light-blue: #a4e7ff;
+  --color-purple: #8338ec;
+  --color-background: #8338ec;
+  --color-card: #5773FF;
+
+  --color-primary: #7380ec;
+  --color-danger: #ff7782;
+  --color-success: #41f1b6;
+  --color-warning: #ffbb55;
+  --bg-gray: #F8F9FD;
+  --text-gray: #cbcbcc;
+
+  --box-shadow: 0 2rem 3rem var (--color-light);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* For calendar  */
+.evk_calendar {
+  height: 100dvh !important;
+}
+.line {
+  margin-bottom: 2rem;
+}
+.evk_calendar tbody td {
+  padding: 0px !important;
+}
+tbody td {
+  height: 50px !important;
+  width: 50px !important;
+}

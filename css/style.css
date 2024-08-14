@@ -1,0 +1,1049 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+
+/* ROOT VARAIBLES */
+:root {
+  --color-white: #fff;
+  --dark-blue: #0038FF;
+  --light-blue: #a4e7ff;
+  --color-purple: #8338ec;
+  --color-background: #8338ec;
+  --color-card: #5773FF;
+
+  --color-primary: #7380ec;
+  --color-danger: #ff7782;
+  --color-success: #41f1b6;
+  --color-warning: #ffbb55;
+  --bg-gray: #F8F9FD;
+  --text-gray: #cbcbcc;
+
+  --box-shadow: 0 2rem 3rem var (--color-light);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: grid;
+  grid-template-columns: 1.1fr 4fr 1.1fr;
+  padding: 10px;
+  transition: background 0.2s linear;
+  background-color: #fff;
+}
+
+/* left aside */
+
+.left {
+  min-width: min-content;
+  background: var(--bg-gray);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 0px 0px 0px 15px;
+  position: relative;
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 2rem;
+}
+.logo-container {
+  display: flex;
+}
+.svg-container {
+  display: flex;
+  align-items: center;
+}
+
+.svg-container img {
+  width: 35px;
+  margin-right: 10px;
+}
+#brand .svg-container {
+  display: none;
+}
+
+.left ul {
+  position: relative;
+  top: 2rem;
+}
+
+.logo p {
+  font-weight: 700;
+  line-height: 1;
+  width: min-content;
+  font-size: 1.1rem;
+}
+
+
+.left ul #border {
+  height: 2px;
+  padding: 0;
+  width: 80%;
+  background: var(--text-gray);
+  margin: 10px 0 10px 14px;
+}
+
+
+.left ul li a{
+  list-style-type: none;
+  font-weight: 600;
+  color: var(--text-gray);
+  cursor: pointer;
+  padding: 10px 15px;
+  position: relative;
+  display: flex;
+  gap: 10px;
+}
+
+.left ul li a:hover,
+.left ul li a:hover svg {
+  color: var(--dark-blue);
+}
+
+.left ul li a {
+  text-decoration: none;
+}
+.active  {
+  background: linear-gradient(90deg, rgba(246,248,253,1) 8%, rgba(196,228,254,1) 92%);  
+  position: relative;
+}
+.active svg,
+.active a{
+  color: var(--dark-blue) !important  ;
+}
+.active:not(#border):after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: 0;
+  width: 2px;
+  height: 80%;
+  background: var(--dark-blue);
+
+}
+
+.card {
+  position: absolute;
+  padding: 17px;
+  background: var(--dark-blue);
+  margin-right: 1rem;
+  border-radius: 5px;
+  bottom: 1.5rem;
+  font-size: 14px;
+}
+
+.card p {
+  color: white;
+}
+
+.card button {
+  width: 100%;
+  color: var(--dark-blue);
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  padding-block: .6rem;
+  margin-top: 5px;
+}
+
+.text {
+  margin-bottom: 1rem;
+}
+
+/* Styling for main container */
+.main-container .text h2 {
+  font-weight: 400;
+  padding-top: 2rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background: var(--text-gray);
+}
+
+.main {
+  padding: 1rem 2rem;
+}
+
+#brand {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  padding: 1rem 0;
+}
+
+.brand {
+  font-size: x-large;
+  font-weight: 600;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.ham {
+  display: none;
+}
+
+/* Styling for toggle button */
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #222;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-moon {color: #f1c40f;}
+
+.fa-sun {color: #f39c12;}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+
+
+/* this is for searchbar in nav */
+.form {
+  --input-text-color: #222;
+  --input-bg-color: var(--bg-gray);
+  --focus-input-bg-color: transparent;
+  --text-color: #949faa;
+  --active-color: var(--color-card);
+  --inline-padding-of-input: 1.2em;
+  --gap: 0.9rem;
+}
+
+/* form style */
+.form {
+  font-size: 0.4rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  position: relative;
+  isolation: isolate;
+}
+
+/* a fancy bg for showing background and border when focus. */
+.fancy-bg {
+  position: absolute;
+  width: 100%;
+  inset: 0;
+  background: var(--input-bg-color);
+  border-radius: 30px;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+/* label styling */
+
+.form label {
+  width: 100%;
+  height: 40px;
+  padding-inline: var(--inline-padding-of-input);
+  display: flex;
+  align-items: center;
+}
+
+.search,
+.close-btn {
+  position: absolute;
+}
+
+/* styling search-icon */
+.search {
+  fill: var(--text-color);
+  left: var(--inline-padding-of-input);
+}
+
+/* svg -- size */
+svg {
+  width: 17px;
+  display: block;
+}
+
+/* styling of close button */
+.close-btn {
+  border: none;
+  right: var(--inline-padding-of-input);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 0.1em;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--active-color);
+  opacity: 0;
+  visibility: hidden;
+}
+
+#brand p {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+/* styling of input */
+.input {
+  width: 100%;
+  margin-inline: min(2em, calc(var(--inline-padding-of-input) + var(--gap)));
+  background: none;
+  border: none;
+  font-size: 16px;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--text-color)
+}
+
+/* input background change in focus */
+.input:focus~.fancy-bg {
+  border: 1px solid var(--active-color);
+  background: var(--focus-input-bg-color);
+}
+
+/* search icon color change in focus */
+.input:focus~.search {
+  fill: var(--active-color);
+}
+
+/* showing close button when typing */
+.input:valid~.close-btn {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* search container end */
+/* nav part end */
+
+.content {
+  display: grid;
+  grid-template-columns: 1.7fr 2fr;
+  gap: 1.3rem;
+}
+
+/* styling for weather card */
+.weather-card {
+  grid-template-columns: 1fr 1fr;
+  display: grid;
+  padding: 0.8rem;
+  border-radius: 5px;
+  color: white;
+  background: var(--color-card);
+}
+
+.weather-card img {
+  min-width: 3rem;
+  max-width: 5rem;
+}
+
+.weather-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.weather-right h1 {
+  font-size: 3rem;
+}
+
+.weather-right p,
+.weather-card .day-time {
+  font-size: .9rem;
+  font-weight: 300;
+}
+
+.weather-left .time {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Styling for Research card  */
+
+.left-content {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.research {
+  background: var(--bg-gray);
+  padding: 0.8rem;
+  border-radius: 5px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.top .head {
+  background: var(--color-background);
+  padding: 0.4rem 1rem;
+  border-radius: 5rem;
+  color: white;
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+.more img {
+  transform: rotate(90deg);
+}
+
+.more {
+  border: none;
+  border-radius: 50%;
+  padding: 2px 3px;
+  background: transparent;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.more:hover {
+  background: #f0f0f0;
+}
+
+.mid {
+  margin: 1rem 0;
+}
+
+.title {
+  font-size: 1.1rem;
+}
+
+.descript {
+  margin-top: 0.5rem;
+
+}
+
+.r-input-container {
+  display: none;
+}
+.research-input {
+  outline: none;
+  border: none;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 14px;
+  background: #fff;
+}
+.r-input-button {
+  padding: 10px 2rem;
+  border: none;
+  font-size: .9rem;
+  font-weight: 600;
+  background: var(--color-background);
+  color: #fff;
+  border-radius: 4px;
+}
+.research {
+  position: relative;
+}
+
+.date {
+  display: flex;
+  gap: 2px;
+  font-size: .8rem;
+  justify-content: end;
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+}
+
+/* Notes image */
+.notes {
+  padding: .8rem;
+  border-radius: 5px;
+  background: var(--color-card);
+  color: white;
+}
+
+.note-head {
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.notes .line:last-of-type {
+  display: none; /* flex */ 
+}
+.new-note {
+  display: none; /* flex */
+  justify-content: space-between; 
+  padding: 4px 10px;
+}
+.notes ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.notes ul li button {
+  background: transparent;
+  border: none;
+  opacity: 0;
+  transition: all .3s ease-in-out;
+}
+.notes ul li button img {
+  width: 20px;
+}
+.notes ul li:hover button {
+  opacity: 1;
+}
+
+/* Customize the label (the container) */
+ul li {
+  list-style-type: none;
+}
+
+ul li label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: auto;
+  height: auto;
+}
+
+/* Hide the browser's default checkbox */
+ul li label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  height: 17px;
+  width: 17px;
+  background-color: #eee;
+}
+
+ul li label:hover input~.checkmark {
+  background-color: #ccc;
+}
+
+ul li label input:checked~.checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+ul li label input:checked~.checkmark:after {
+  display: block;
+}
+
+ul li label .checkmark:after {
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.list-container ul {
+  margin: .6rem 0 0 0;
+}
+
+.notes .line {
+  margin: .5rem 0;
+}
+
+/* Styling for custom graph */
+.right-content {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+}
+
+.progressBar-container {
+  background: var(--bg-gray);
+  padding: .5rem 1rem;
+  border-radius: 5px;
+}
+
+#progressBar-text {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 1.4rem;
+  padding-top: .4rem;
+}
+
+#progressBar-text p {
+  position: absolute;
+  left: 0;
+  background: var(--color-background);
+  padding: .6rem .5rem;
+  border-radius: 50%;
+  font-size: .8rem;
+  font-weight: 600;
+  color: white;
+}
+
+#progressBar-text h3 {
+  font-size: 1.5rem;
+}
+
+#progressBar {
+  display: grid;
+  place-items: center;
+}
+
+.circlechart {
+  display: grid;
+  place-content: center;
+}
+
+/* for changing color of the progress bar */
+.circle-chart__circle {
+  stroke: var(--color-background) !important;
+}
+
+/* for changing font weight of percentage */
+.circle-chart__info {
+  font-weight: 500;
+}
+
+/* styling for bookmark card */
+.bookmarks {
+  background: var(--color-card);
+  padding: 0.8rem;
+  border-radius: 5px;
+  color: white;
+}
+
+.bookmark-top {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 5px;
+}
+
+.b-head {
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.bookmark-top button {
+  padding: 0 12px;
+  border-radius: 30px;
+  border: none;
+  font-size: 12px;
+  background: var(--dark-blue);
+  color: white;
+  font-weight: 600;
+}
+
+.new-url {
+  display: none; /*flex*/
+  justify-content: space-between;
+}
+.bookmarks .line:last-of-type {
+  display: none;
+}
+.bookmarks ul {
+  margin-top: .4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+}
+
+.bookmarks ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px .5rem;
+  gap: 5px;
+}
+.bookmarks ul li img {
+  width: 26px;
+}
+.bookmarks ul li .del { 
+  background: none;
+  border: none;
+  opacity: 0;
+  transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.bookmarks ul li:hover .del {
+  opacity: 1;
+}
+.bookmarks ul li .del img{
+  width: 15px;
+}
+
+.bookmarks ul li a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.new-note button {
+  padding: 0 15px;
+  border-radius: 5px;
+  border: none;
+  background: var(--dark-blue);
+  color: white;
+  font-weight: 600;
+}
+
+.new-url {
+  padding: 10px 10px;
+}
+.entryarea {
+  position: relative;
+  width: 62%;
+  height: 29px;
+}
+.entryarea input {
+  position: absolute;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  padding: 0 13px;
+  line-height: 29px;
+  border: 2px solid #f0ffff;
+  border-radius: 5px;
+  background-color: transparent;
+  z-index: 1000;
+  transition: .1s ease; 
+}
+.labelline {
+  position: absolute;
+    top: 3px;
+    font-size: .9rem;
+    color: #f0ffff;
+    height: 28px;
+    padding: 0 6px;
+    margin: 0 4px;
+    background: var(--color-card);
+    display: flex;
+    align-items: center ;
+    transition: 0.2s ease;
+}
+.entryarea input:focus,
+.entryarea input:valid {
+  color: #66ff00;
+  border: 2px solid #66ff00;
+}
+.entryarea input:focus + .labelline,
+.entryarea input:valid + .labelline {
+  color: #66ff00;
+  height: 10px;
+  line-height: 5px;
+  z-index: 1111;
+  transform: translate(-5px,-7px) scale(.7);
+}
+
+.new-url button {
+  padding: 0 15px;
+  border-radius: 5px;
+  border: none;
+  background: var(--dark-blue);
+  color: white;
+  font-weight: 600;
+}
+button {
+  cursor: pointer;
+}
+
+/* Right section */
+
+.right {
+  min-width: min-content;
+  background: var(--bg-gray);
+  position: relative;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 20px 15px;
+  display: grid;
+  /* grid-template-rows: 5% 90% 5%; */
+}
+
+.right .right-top .icons {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+}
+.icons .icon {
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.icon img {
+  width: 20px;
+}
+
+.right-mid {
+  height: 82vh;
+}
+
+.r-m-head {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.r-m-head h3 {
+  font-size: 1rem;
+}
+.r-m-head p {
+  font-size: 14px;
+  color: #FD3E3F;
+}
+
+/* Styling Activities  */
+.activity {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 1rem;
+}
+.activity .activity-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.activity .activity-icon img {
+  width: 22px;
+}
+
+.activity-text h4{
+  font-size: .9rem;
+}
+.activity-text p{
+  font-size: .8rem;
+  color: #FD3E3F90;
+  font-weight: 600;
+}
+
+.r-m-activities {
+  padding-top: 1rem;
+  overflow: hidden;
+}
+.r-m-activities .activity {
+  margin-block: 1rem;
+}
+
+.right-bottom {
+  position: relative;
+}
+.right-bottom button {
+  padding: 17px;
+  background: var(--dark-blue);
+  border-radius: 5px;
+  width: 100%;
+  font-size: 1rem;
+  color: white;
+  font-weight: 600;
+}
+.right-bottom button:hover {
+  background: #2251fc;
+}
+
+/* For dark mode */
+.dark > * {
+  color: white;
+}
+.dark .circlechart svg {
+  fill: white;
+}
+.dark .input {
+  color: white;
+}
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 900;
+}
+.overlay.active {
+  display: block;
+}
+
+.enable{
+  transform: translateX(0%) !important;
+}
+/* Adding responsiveness */
+
+/* for tablets */
+@media (max-width: 880px) {
+  .right {
+    display: none;
+  }
+  body {
+    display: block;
+    padding: 0;
+  }
+  .ham {
+    display: block;
+  }
+  .left {
+    position: absolute;
+    width: 60vw;
+    z-index: 1000;
+    height: 100dvh;
+    transform: translateX(-110%);
+    transition: all .3s ease;
+  }
+  .main {
+    padding-inline: .5rem;
+  }
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .bookmarks ul {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  #brand .svg-container {
+    display: block;
+  }
+  .form {
+    width: 40px;
+  }
+  .left-content {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .left-content > div {
+    min-height: 250px;
+  }
+  .right-content > div {
+    min-height: 300px;
+  }
+  .progressBar-container {
+    padding-top: 2rem;
+  }
+}
+
+/* Screen size 600px for mobiles */
+@media (max-width: 600px) {
+  body {
+    display: block;
+  } 
+  .right {
+    display: none;
+  }
+  .left {
+    position: absolute;
+    width: 80vw;
+    padding: 0;
+    transform: translateX(-110%);
+  }
+  .main {
+    padding-inline: .5rem;
+  }
+  .content {
+    grid-template-columns: auto;
+  }
+
+  .bookmarks ul {
+    grid-template-columns: 1fr 1fr;
+  }
+  #brand .svg-container {
+    display: block;
+  }
+  .form {
+    width: 40px;
+  }
+  .search {
+    left: 12px;
+  }
+  .left-content {
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  .container {
+    gap: .5rem;
+  }
+  .card {
+    margin-left: 1rem;
+  }
+}
